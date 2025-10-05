@@ -7,11 +7,11 @@ En Python no necesito declarar el tipo de variable como en C. Simplemente asigno
 
 2. ¿Cómo puedo escribir varias variables en una misma línea de código en Python, por ejemplo, cuando quiero imprimir varias palabras dentro de un bucle? (ChatGPT)
 Para escribir varias variables en una misma línea de código en Python, por ejemplo cuando quiero imprimir varias palabras dentro de un bucle, hay wue usar el parámetro end en la función print(). Este parámetro evita que se haga un salto de línea después de cada impresión. Por ejemplo, si tengo una lista de palabras y hago:
-for palabra in palabras:
-print(palabra, end=" ")
+  for palabra in palabras:
+    print(palabra, end=" ")
 todas se muestran en la misma línea, separadas por un espacio. De esta forma puedo controlar cómo se imprimen los valores sin que cada uno aparezca en una línea distinta.
 
-3. (Similar a la pregunta 1.) Enséñame alguna manera o función en la que pueda mostrar por pantalla, una lista de variables sin que haya salto de línea. (ChatGPT)
+3. (Similar a la pregunta 2.) Enséñame alguna manera o función en la que pueda mostrar por pantalla, una lista de variables sin que haya salto de línea. (ChatGPT)
 En este caso, me ha ofrecido cuatro opciones o soluciones posibles. Puedo mostrar variables sin salto de línea en de varias formas: uso print() con el parámetro end para evitar el salto, convierto los valores a texto y los uno con join(), escribo directamente con sys.stdout.write(), o utilizo print(..., end=" ") dentro de un bucle para imprimir todo en la misma línea.
 
 4. ¿Puedo usar una variable en un for sin declararla antes? (Claude)
