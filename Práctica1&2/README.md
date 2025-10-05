@@ -1,4 +1,5 @@
 Práctica 1&2- Preguntas realizadas a una LLM
+
 GIT Ana Díaz López
 
 1. ¿No hace falta que ponga de que tipo es la variable en Python para crearla (como en C)? (Claude)
