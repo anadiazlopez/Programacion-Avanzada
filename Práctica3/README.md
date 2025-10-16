@@ -12,11 +12,11 @@ Entendí que TIME_FORMATS y time_count tienen sentido como atributos de clase po
 
 3. ¿Para qué sirve exactamente el método from_string?
 
-Al consultarlo, comprendí que from_string me facilita crear un objeto Time de manera directa a partir de un texto. Esto hace que el programa sea más práctico, ya que no necesito pedir cada valor por separado. También me permite validar la cadena completa de forma automática usando expresiones regulares.
+El método from_string me facilita crear un objeto Time de manera directa a partir de un texto. Esto hace que el programa sea más práctico, ya que no necesito pedir cada valor por separado. También me permite validar la cadena completa de forma automática usando expresiones regulares.
 
 4. ¿Por qué algunos métodos tienen doble guion bajo al inicio de su nombre?
 
-Descubrí que el doble guion bajo indica que un método es “privado” dentro de la clase. No es que sea completamente inaccesible, pero sugiere que no debería ser usado fuera de la propia clase. Esto me ayuda a mantener mi código más organizado y a proteger la lógica interna de modificaciones accidentales.
+Resulta que el doble guion bajo indica que un método es “privado” dentro de la clase. No es que sea completamente inaccesible, pero sugiere que no debería ser usado fuera de la propia clase. Esto me ayuda a mantener mi código más organizado y a proteger la lógica interna de modificaciones accidentales.
 
 5. ¿Qué beneficio obtengo al separar la lógica en funciones como show_menu, input_new_time o display_time?
 
