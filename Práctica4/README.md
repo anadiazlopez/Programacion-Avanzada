@@ -1,3 +1,5 @@
+PRÁCTICA 4- Ana Díaz López
+
 1. ¿Cómo puedo programar la validación de entrada de datos numéricos en Python?
 
 Para validar entradas numéricas uso un bucle while True con try-except. Capturo la excepción ValueError que se lanza cuando la conversión falla. Básicamente, intentas convertir el input a int o float, y si falla, capturas el error y vuelves a pedir el dato.
