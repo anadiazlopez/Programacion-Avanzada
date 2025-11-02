@@ -2,15 +2,15 @@ PRÁCTICA 4- Ana Díaz López
 
 1. ¿Cómo puedo programar la validación de entrada de datos numéricos en Python?
 
-Para validar entradas numéricas uso un bucle while True con try-except. Capturo la excepción ValueError que se lanza cuando la conversión falla. Básicamente, intentas convertir el input a int o float, y si falla, capturas el error y vuelves a pedir el dato.
+Para validar entradas numéricas uso un bucle while True con try-except. Capturo la excepción ValueError que se lanza cuando la conversión falla. Se intenta convertir el input a int o float, y si falla, se captura el error y vuelves a pedir el dato.
 
 2. Utilización de numpy
 
-NumPy está optimizado para cálculos matemáticos y es mucho más rápido que las listas. Además, puedes hacer operaciones entre matrices directamente con operadores como + o -, mientras que con listas tendrías que hacer bucles manuales. También tiene funciones útiles como np.zeros() para inicializar matrices.
+NumPy está optimizado para cálculos matemáticos y es mucho más rápido que las listas. Además, se puede hacer operaciones entre matrices directamente con operadores como + o -, mientras que con listas habría que hacer bucles manuales. También tiene funciones útiles como np.zeros() para inicializar matrices.
 
 3. ¿Hay alguna alternativa más corta if-elif-else?
 
-El match-case hace el código más legible cuando tienes muchas opciones. Es el equivalente al switch de otros lenguajes. Para menús con muchas opciones es más limpio visualmente que una cadena larga de if-elif.
+El match-case hace el código más legible cuando se tienen muchas opciones. Es el equivalente al switch de otros lenguajes. Para menús con muchas opciones es más limpio visualmente que una cadena larga de if-elif.
 
 4. ¿Cómo se validan las dimensiones de matrices antes de sumarlas o restarlas?
 
@@ -18,7 +18,7 @@ Se comparan los atributos num_filas y num_columnas de ambas matrices. Si cualqui
 
 5. ¿Cómo verificar que dos matrices sean compatibles para operaciones?
 
-Verificas que ambas matrices existan primero (con Existe()), y luego comparas sus dimensiones. Para suma y resta necesitas dimensiones idénticas. Haces la comprobación con un if que evalúa filas y columnas usando or para detectar cualquier discrepancia.
+Se verifica que ambas matrices existan primero (con Existe()), y luego se comparan sus dimensiones. Para suma y resta se necesitan las mismas dimensiones. Se hace la comprobación con un if que evalúa filas y columnas usando or para detectar cualquier discrepancia.
 
 6. ¿Para qué utilizo la clase CMat() en mis programas de Python?
 
