@@ -1,5 +1,10 @@
-
+from publicaciones import Libro, Revista  
+from excepciones import ErrorBiblioteca
 from Utils import validar_titulo, validar_anio, guardar_publicaciones, cargar_publicaciones
+
+# C:\Users\anadi\Desktop\uni\2025-2026\PRIMER CUATRIMESTRE\PROGRAMACIÓN AVANZADA\PRÁCTICA 7-8- PROGRA/biblioteca.dat
+
+import os  
 
 publicaciones = []
 
@@ -36,7 +41,7 @@ def mostrar():
             print("No hay publicaciones registradas.")
     else:
         for i, pub in enumerate(publicaciones, 1):
-            print(f"{i}. {pub.descripcion()}")
+            print(f"\n----------------------------------------------\n{i}. {pub.descripcion()}")
 
 def guardar():
     if not publicaciones:
@@ -80,6 +85,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 

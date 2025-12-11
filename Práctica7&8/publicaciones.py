@@ -51,7 +51,7 @@ class Libro(Publicacion):
         base = super().descripcion()
         return ("LIBRO\n" 
                 f"\n{base}" 
-                f"   - Género: {self._genero}")
+                f"  - Género: {self._genero}")
 
 
 class Revista(Publicacion):
