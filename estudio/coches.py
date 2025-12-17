@@ -1,5 +1,7 @@
 import json
 
+# comentario
+
 ARCHIVO_DATOS = r"C:\Users\anadi\Desktop\uni\2025-2026\PRIMER CUATRIMESTRE\PROGRAMACIÓN AVANZADA\estudio PRL- PROGRA\coches.json"
 
 class Coche:
