@@ -9,15 +9,20 @@ class MatrizFloat:
     nfil # Almacena número de filas de la matriz (int)
     ncol # Almacena número de columnas de la matriz (int)
     """
-    def __init__():
+    TIPO_DATO = np.float32
+
+    def __init__(self):
         """
         Inicializador. No recibe parámetros adicionales.
         Inicializa el atributo matriz con None y los atributos
         nfil y ncol a 0
         """
-        pass
+        self._matriz = None
+        self._nfil = 0
+        self._ncol = 0
 
-    def matriz_identidad():
+    @classmethod
+    def matriz_identidad(cls, n):
         """
         Método de clase que crea y devuelve una nueva
         instancia de MatrizFloat configurada como matriz
@@ -29,8 +34,13 @@ class MatrizFloat:
         (MatrizFloat)
         """
     #NOTA: Utilice “eye” de numpy para crear la matriz identidad
-        pass
-    def mismas_dimensiones():
+        instancia = cls()
+        instancia._matriz = np.eye(n, dtype=cls.TIPO_DATO)
+        instancia._nfil = n
+        instancia._ncol = n
+        return instancia
+
+    def mismas_dimensiones(self, m1, m2):
         """
         Método para comparar dimensiones.
         Parámetros:
@@ -41,8 +51,12 @@ class MatrizFloat:
         filas y columnas, y False en caso contrario
         (o si alguna no está creada)
         """
-        pass
-    def crear_matriz2D():
+        if not m1.existe() or not m2.existe():
+            return False
+
+        return m1._nfil == m2._nfil and m1._ncol == m2._ncol
+
+    def crear_matriz2D(self, nFil, nCol):
         """
         Método para crear una matriz bidimensional de ceros.
         Asigna valores de filas y columnas según parámetros.
@@ -50,41 +64,59 @@ class MatrizFloat:
         nFil: Número de filas (int)
         nCol: Número de columnas (int)
         """
-        pass
-    def crear_matriz1D():
+        self._matriz = np.zeros((nFil, nCol), dtype=self.TIPO_DATO)
+        self._nfil = nFil
+        self._ncol = nCol
+
+    def crear_matriz1D(self, nElementos):
         """
         Método para crear una matriz unidimensional de ceros.
         Usa crear_matriz2D para asignar 1 fila y n columnas.
         Parámetros:
         nElementos: Número de elementos de la fila (int)
         """
-        pass
-    def existe():
+        self.crear_matriz2D(1, nElementos)
+     
+    def existe(self):
         """
         Método que verifica si matriz está creada y no está vacía
         Devuelve:
         True si existe, de lo contrario False
         """
-        pass
-    def introducir():
+        return self._matriz is not None
+
+    def introducir(self):
         """
         Método que solicita por consola el valor numérico decimal
         para cada posición (i, j) de la matriz.
         Da error si se intenta introducir datos sin haber creado la
         matriz previamente.
         """
-        pass
-    def mostrar():
+        if not self.existe():
+            print("\n¡Error! La matriz no ha sido creada previamente.")
+            return
+
+        for i in range(self._nfil):
+            for j in range(self._ncol):
+                valor = float(input(f"Introduce el valor para la posición ({i}, {j}): "))
+                self._matriz[i, j] = valor
+
+    def mostrar(self):
         """
         Método para mostrar las dimensiones y los elementos de la
         matriz. Si la matriz no existe (existe() == False), muestra
         un mensaje advirtiéndolo
         """
-        pass
+        if not self.existe():
+            print("\n¡Error! La matriz no ha sido creada previamente.")
+            return
+
+        print('La matriz es de', self._nfil, 'x', self._ncol,':\n',self._matriz)
+
     # ===========================================================
     # OPERACIONES ALGEBRAICAS
     # ===========================================================
-    def sumar_matrices():
+    def sumar_matrices(self, otra_matriz):
         """
         Método que suma la matriz actual con otra matriz.
         Parámetros:
@@ -94,8 +126,17 @@ class MatrizFloat:
         la suma.
         """
         #Nota: Las dimensiones de ambas matrices deben coincidir.
-        pass
-    def restar_matrices():
+        if not self.mismas_dimensiones(self, otra_matriz):
+            print("\n¡Error! Las dimensiones de las matrices no coinciden.")
+            return None
+
+        matriz_resul = MatrizFloat()
+        matriz_resul._matriz = self._matriz + otra_matriz._matriz
+        matriz_resul._nfil = self._nfil
+        matriz_resul._ncol = self._ncol
+        return matriz_resul
+
+    def restar_matrices(self, otra_matriz):
         """
         Método que resta la matriz actual con otra matriz.
         Parámetros:
@@ -105,45 +146,17 @@ class MatrizFloat:
         la resta.
         """
         #Nota: Las dimensiones de ambas matrices deben coincidir.
-        pass
+        if not self.mismas_dimensiones(self, otra_matriz):
+            print("\n¡Error! Las dimensiones de las matrices no coinciden.")
+            return None
 
-def leer_int():
-    """
-    Función auxiliar que lee un número entero del teclado.
-    Si se introduce un valor no válido, se solicita de nuevo.
+        matriz_resul = MatrizFloat()
+        matriz_resul._matriz = self._matriz - otra_matriz._matriz
+        matriz_resul._nfil = self._nfil
+        matriz_resul._ncol = self._ncol
+        return matriz_resul
+        
 
-    Parámetros:
-        mensaje # El mensaje que se muestra al usuario
-        # solicitando la entrada (str). Por defecto
-        # "Introduce un número entero: "
-    Devuelve:
-    int: El valor entero introducido por el usuario.
-    """
-    pass
 
-def leer_float():
-    """
-    Función auxiliar que solicita al usuario un número decimal.
-    Si se introduce un valor no válido, se solicitar de nuevo.
-    Parámetros:
-    mensaje # El mensaje que se muestra al usuario
-    # solicitando la entrada (str). Por defecto
-    # "Introduce un número decimal: "
-    Devuelve:
-    El valor decimal introducido por el usuario (float)
-    """
-    pass
-
-def crear_menu():
-    """
-    Función que muestra un menú de opciones y solicita al usuario
-    que seleccione una opción válida.
-    Parámetros:
-    opciones_menu # lista de opciones a mostrar en el menú
-    # (list)
-    Devuelve:
-    El número de opción seleccionado por el usuario (int)
-    """
-    pass
 
  

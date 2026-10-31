@@ -19,15 +19,15 @@ class Time:
     TIME_FORMATS = ("AM", "PM", "24 HOURS")
     time_count = 0
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, hours = 0, minutes = 0, sec = 0, formt = "24 HOURS"):
         """
         Inicializa los atributos a 0.
         Es el único método que se le pasa parámetros como ejemplo
         """
-        self.__hours = 0
-        self.__minutes = 0
-        self.__seconds = 0
-        self.__time_format = "24 HOURS"
+        self.__hours = hours
+        self.__minutes = minutes
+        self.__seconds = sec
+        self.__time_format = formt
 
         Time.time_count += 1
 
@@ -172,8 +172,13 @@ def menu():
 
 
 def main():
-    tiempo = None
+    tiempo = Time()
 
+    ahora = Time(11, 55, 11, "AM")
+    visualizar(ahora)
+    print(f"{Time.get_time_count()}")
+    ahora.set_time(11, 55, 12, "24 HOURS")
+    visualizar(ahora)
     while True:
         opcion = menu()
 
